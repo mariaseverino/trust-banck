@@ -1,7 +1,7 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { Cartoes } from "./pages/Cartoes";
+import { Cartao } from "./pages/Cartao";
 import { Home } from "./pages/Home";
 import { Shopping } from "./pages/Shopping";
 import colors from "./styles/colors";
@@ -13,8 +13,6 @@ export function Routes() {
         <NavigationContainer>
             <tab.Navigator
                 screenOptions={{
-                    // tabBarInactiveBackgroundColor: colors.gray[500],
-                    // tabBarActiveBackgroundColor: colors.gray[500],
                     tabBarActiveTintColor: colors.secundary.default,
                     tabBarLabelPosition: "below-icon",
                     tabBarStyle: {
@@ -22,7 +20,14 @@ export function Routes() {
                         paddingBottom: 20,
                         paddingTop: 15,
                         backgroundColor: colors.gray[500],
+                        borderTopWidth: 0,
                     },
+                    headerStyle: {
+                        elevation: 0,
+                        backgroundColor: colors.primary.dark,
+                        height: 100,
+                    },
+                    headerTintColor: colors.gray[600],
                 }}
             >
                 <tab.Screen
@@ -31,17 +36,21 @@ export function Routes() {
                     options={{
                         headerShown: false,
                         tabBarIcon: ({ color }) => (
-                            <FontAwesome name="home" color={color} size={24} />
+                            <Ionicons
+                                name="home-outline"
+                                color={color}
+                                size={24}
+                            />
                         ),
                     }}
                 />
                 <tab.Screen
-                    name="Cartões"
-                    component={Cartoes}
+                    name="Cartão"
+                    component={Cartao}
                     options={{
                         tabBarIcon: ({ color }) => (
-                            <FontAwesome
-                                name="credit-card"
+                            <Ionicons
+                                name="wallet-outline"
                                 color={color}
                                 size={24}
                             />
@@ -53,8 +62,8 @@ export function Routes() {
                     component={Shopping}
                     options={{
                         tabBarIcon: ({ color }) => (
-                            <FontAwesome
-                                name="shopping-cart"
+                            <Ionicons
+                                name="cart-outline"
                                 color={color}
                                 size={24}
                             />
