@@ -13,6 +13,8 @@
     </p>
 </div>
 
+<h2 align="center">🚧 <strong> --------------- Em desenvolvimento --------------- </strong> 🚧 </h2>
+
 ## :pushpin: Sobre o projeto
 
 Projeto desenvolvido para fins de estudo utlizando como referencia o design feito pelo [Pedro Dias](https://twitter.com/peauas).
